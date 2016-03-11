@@ -33,6 +33,20 @@ Now you can easily do commands like:
 pay()->banks();
 ```
 
+## Starting payments:
+
+```
+pay()->startTransaction([
+    'amount' => $total,
+    'returnUrl' => 'http://www.example.com/thanks',
+
+    'exchangeUrl' => 'http://www.example.com/webhook',
+    'paymentMethod' => 138,,
+    'description' => 'ORder',
+    'testmode' => 1
+]);
+```
+
 ## Todo
 
 - Add chargeback functionality

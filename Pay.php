@@ -25,11 +25,39 @@ class Pay
     }
 
     /**
+     * Returns all payment methods
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    public function methods()
+    {
+        $methods = collect(Paymentmethods::getList());
+
+        return $methods;
+    }
+
+    /**
+     * Returns the name for a method
+     *
+     * @param null $id
+     * @return bool
+     */
+    public function methodName($id = null)
+    {
+        if(is_null($id)) return false;
+
+        return $this->methods()->groupBy('id')->get($id)->first();
+    }
+
+    /**
+     * Returns iDEAL bank lists as collection
+     * Banks are cached so speed won't be an issue here.
+     *
      * @return array
      */
     public function banks()
     {
-        return Cache::remember('banks', 4800, function () {
+        return Cache::remember('banks', $this->cacheTime, function () {
             $issuers = collect(Paymentmethods::getBanks(10));
 
             $idealIssuers = [];
@@ -42,12 +70,20 @@ class Pay
         });
     }
 
+    /**
+     * Start transaction
+     *
+     * @param array $arr
+     * @return \Paynl\Result\Transaction\Start
+     */
     public function startTransaction($arr = [])
     {
         return Transaction::start($arr);
     }
 
     /**
+     * Returns a transaction
+     *
      * @param $id
      * @return \Paynl\Result\Transaction\Transaction
      */
