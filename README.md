@@ -27,13 +27,25 @@ Add the helpers.php file to the *app\Utilities* folder aswell. Then in your comp
   },
 ```
 
-Now you can easily do commands like:
+Commands:
 
 ```
+// ## Get all payment methods, returns a collection
+pay()->methods();
+```
+
+```
+// ## Get the method name by method id
+pay()->methodName($id);
+```
+
+```
+// ## Get all banks (for iDEAL)
 pay()->banks();
 ```
 
-## Starting payments:
+
+## Starting a payment:
 
 ```
 pay()->startTransaction([
@@ -45,6 +57,12 @@ pay()->startTransaction([
     'description' => 'ORder',
     'testmode' => 1
 ]);
+```
+
+## Getting a payment
+
+```
+pay()->getTransaction($id);
 ```
 
 ## Todo
