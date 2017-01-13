@@ -3,8 +3,9 @@
 namespace LaraPay;
 
 use Paynl\Config;
-use Paynl\Paymentmethods;
 use Paynl\Transaction;
+use Paynl\Paymentmethods;
+use Illuminate\Support\Facades\Cache;
 
 class LaraPay
 {
