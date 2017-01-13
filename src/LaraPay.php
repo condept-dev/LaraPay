@@ -53,15 +53,7 @@ class LaraPay
     public function banks()
     {
         return Cache::remember('banks', $this->cacheTime, function () {
-            $issuers = collect(Paymentmethods::getBanks(10));
-
-            $idealIssuers = [];
-            foreach ($issuers as $issuer)
-            {
-                $idealIssuers[$issuer['id']] = htmlspecialchars($issuer['name']);
-            }
-
-            return $idealIssuers;
+            return collect(Paymentmethods::getBanks(10))->pluck('name', 'id');
         });
     }
 
