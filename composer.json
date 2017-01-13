@@ -1,0 +1,30 @@
+{
+  "name": "cannonb4ll/larapay",
+  "description": "Laravel 5 pay.nl provider",
+  "keywords": [
+    "laravel"
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "predis/predis": "~1.0",
+    "paynl/sdk": "^1.1"
+  },
+  "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "LaraPay\\": "src/"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dennis Smink",
+      "email": "dennissmink@gmail.com",
+      "homepage": "http://www.dennissmink.nl",
+      "role": "Owner"
+    }
+  ]
+}
