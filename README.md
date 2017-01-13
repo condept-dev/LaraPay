@@ -28,3 +28,26 @@ PAY_SERVICE_ID=
 ```
 
 You can get these credentials fromout https://admin.pay.nl
+
+## Available methods:
+
+```php
+$larapay = new LaraPay;
+
+$larapay->methods(); // Returns list of payment methods
+
+$larapay->banks(); // Returns list of banks (iDEAL)
+
+// Starts a transaction, you can apply more data here according to the pay's API documentation.
+$larapay->startTransaction([
+   'amount' => $total,		
+   'returnUrl' => 'http://www.example.com/thanks',		
+	
+   'exchangeUrl' => 'http://www.example.com/webhook',		
+   'paymentMethod' => 138,
+   'description' => 'ORder',		
+   'testmode' => 1
+]);
+
+$larapay->getTransaction($id); // Returns a transaction
+```
