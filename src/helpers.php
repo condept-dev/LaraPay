@@ -2,5 +2,5 @@
 
 function pay()
 {
-    return new LaraPay\LaraPay();
+    return new LaraPay\LaraPay;
 }

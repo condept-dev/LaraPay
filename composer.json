@@ -8,7 +8,7 @@
     "php": ">=5.6.0",
     "guzzlehttp/guzzle": "~6.0",
     "predis/predis": "~1.0",
-    "paynl/sdk": "^1.1"
+    "paynl/sdk": "^1.3"
   },
   "autoload": {
     "files": [

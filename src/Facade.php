@@ -1,4 +1,6 @@
-<?php namespace LaraPay;
+<?php
+
+namespace LaraPay;
 
 class Facade extends \Illuminate\Support\Facades\Facade
 {

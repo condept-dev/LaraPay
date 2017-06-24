@@ -1,4 +1,6 @@
-<?php namespace LaraPay;
+<?php
+
+namespace LaraPay;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -30,8 +32,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             'config/larapay.php',
         ]);
 
-        $this->app['larapay'] = $this->app->share(function ($app) {
-            return new LaraPay();
+        $this->app->singleton(Larapay::class, function ($app) {
+            return new Larapay();
         });
     }
 }
