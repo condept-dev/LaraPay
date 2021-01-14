@@ -18,6 +18,7 @@ class LaraPay
     public function __construct()
     {
         Config::setApiToken(config('larapay.tokenId'));
+        Config::setTokenCode(config('larapay.tokenCode'));
         Config::setServiceId(config('larapay.serviceId'));
     }
 

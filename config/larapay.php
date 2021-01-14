@@ -21,4 +21,9 @@ return [
      * Service ID
      */
     'serviceId' => env('PAY_SERVICE_ID'),
+
+    /*
+     * Token code
+     */
+    'tokenCode' => env('PAY_TOKEN_CODE'),
 ];
