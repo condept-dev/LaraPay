@@ -2,7 +2,7 @@
 
 namespace LaraPay;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class LaraPayServiceProvider extends \Illuminate\Support\ServiceProvider
 {
 
     protected $defer = false;
